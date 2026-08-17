@@ -3,13 +3,9 @@
    ========================================== */
 
 * {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
 }
 
 
@@ -22,7 +18,6 @@ body {
     background: #f3f5f9;
 
     color: #20242c;
-
 }
 
 
@@ -32,7 +27,6 @@ select,
 textarea {
 
     font-family: inherit;
-
 }
 
 
@@ -41,14 +35,12 @@ button {
     cursor: pointer;
 
     border: none;
-
 }
 
 
 .app {
 
     min-height: 100vh;
-
 }
 
 
@@ -61,14 +53,12 @@ button {
     display: none;
 
     min-height: 100vh;
-
 }
 
 
 .page.active {
 
     display: block;
-
 }
 
 
@@ -81,18 +71,15 @@ button {
     display: none;
 
     justify-content: center;
-
     align-items: center;
 
     padding: 20px;
-
 }
 
 
 #registrationPage.active {
 
     display: flex;
-
 }
 
 
@@ -103,14 +90,12 @@ button {
     max-width: 450px;
 
     text-align: center;
-
 }
 
 
 .registration-card h1 {
 
     margin-bottom: 10px;
-
 }
 
 
@@ -119,7 +104,6 @@ button {
     color: #777;
 
     margin-bottom: 30px;
-
 }
 
 
@@ -138,7 +122,6 @@ button {
     box-shadow:
         0 8px 30px
         rgba(0, 0, 0, 0.07);
-
 }
 
 
@@ -156,7 +139,6 @@ label {
         18px 0 7px;
 
     font-weight: bold;
-
 }
 
 
@@ -178,7 +160,6 @@ textarea {
     outline: none;
 
     background: white;
-
 }
 
 
@@ -187,7 +168,6 @@ select:focus,
 textarea:focus {
 
     border-color: #4d7cff;
-
 }
 
 
@@ -196,7 +176,6 @@ textarea {
     min-height: 140px;
 
     resize: vertical;
-
 }
 
 
@@ -221,14 +200,12 @@ textarea {
     font-size: 16px;
 
     font-weight: bold;
-
 }
 
 
 .registration-card button:hover {
 
     background: #365fdb;
-
 }
 
 
@@ -246,14 +223,12 @@ header {
     box-shadow:
         0 2px 10px
         rgba(0, 0, 0, 0.05);
-
 }
 
 
 header h1 {
 
     font-size: 28px;
-
 }
 
 
@@ -262,7 +237,6 @@ header p {
     color: #777;
 
     margin-top: 6px;
-
 }
 
 
@@ -279,7 +253,6 @@ header p {
     align-items: center;
 
     gap: 20px;
-
 }
 
 
@@ -301,14 +274,12 @@ header p {
     font-weight: bold;
 
     transition: 0.2s;
-
 }
 
 
 .logout-button:hover {
 
     background: #ffd5d5;
-
 }
 
 
@@ -323,7 +294,6 @@ header p {
     justify-content: space-between;
 
     align-items: center;
-
 }
 
 
@@ -339,7 +309,6 @@ header p {
 
     padding:
         60px 20px;
-
 }
 
 
@@ -351,7 +320,6 @@ header p {
         repeat(3, 1fr);
 
     gap: 25px;
-
 }
 
 
@@ -380,7 +348,6 @@ header p {
         rgba(0, 0, 0, 0.06);
 
     transition: 0.2s;
-
 }
 
 
@@ -392,14 +359,12 @@ header p {
     box-shadow:
         0 12px 30px
         rgba(0, 0, 0, 0.12);
-
 }
 
 
 .menu-card .icon {
 
     font-size: 55px;
-
 }
 
 
@@ -408,7 +373,6 @@ header p {
     font-size: 22px;
 
     font-weight: bold;
-
 }
 
 
@@ -417,7 +381,6 @@ header p {
     color: #777;
 
     text-align: center;
-
 }
 
 
@@ -433,7 +396,6 @@ header p {
 
     padding:
         40px 20px;
-
 }
 
 
@@ -453,14 +415,12 @@ header p {
     font-weight: bold;
 
     font-size: 15px;
-
 }
 
 
 .back-button:hover {
 
     background: #e1e5ec;
-
 }
 
 
@@ -481,7 +441,6 @@ header p {
     box-shadow:
         0 5px 20px
         rgba(0, 0, 0, 0.05);
-
 }
 
 
@@ -492,7 +451,6 @@ header p {
     background: #4d7cff;
 
     color: white;
-
 }
 
 
@@ -505,14 +463,12 @@ header p {
 
     border-bottom:
         1px solid #eee;
-
 }
 
 
 .lesson:last-child {
 
     border-bottom: none;
-
 }
 
 
@@ -521,20 +477,60 @@ header p {
     width: 50px;
 
     font-weight: bold;
-
 }
 
 
 .lesson-subject {
 
     flex: 1;
-
 }
 
 
 /* ==========================================
    РАСПИСАНИЕ ЗВОНКОВ
    ========================================== */
+
+.bell-time {
+
+    width: 100px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+.bell-lesson {
+
+    width: 80px;
+
+    font-weight: bold;
+}
+
+
+.bell-start {
+
+    color: #315ed8;
+
+    font-weight: bold;
+}
+
+
+.bell-end {
+
+    color: #555;
+
+    font-weight: bold;
+}
+
+
+.bell-separator {
+
+    color: #999;
+
+    margin: 0 8px;
+}
+
 
 .bells-title {
 
@@ -544,46 +540,10 @@ header p {
 
     padding: 18px 20px;
 
+    border-radius:
+        15px 15px 0 0;
+
     font-size: 22px;
-
-    font-weight: bold;
-
-}
-
-
-.bell-lesson {
-
-    width: 100px;
-
-    font-weight: bold;
-
-}
-
-
-.bell-start {
-
-    color: #315ed8;
-
-    font-weight: bold;
-
-}
-
-
-.bell-end {
-
-    color: #555;
-
-    font-weight: bold;
-
-}
-
-
-.bell-separator {
-
-    color: #999;
-
-    margin: 0 8px;
-
 }
 
 
@@ -605,7 +565,6 @@ header p {
     font-weight: bold;
 
     margin-bottom: 25px;
-
 }
 
 
@@ -618,14 +577,12 @@ header p {
     border-radius: 15px;
 
     margin-bottom: 30px;
-
 }
 
 
 .note-form h2 {
 
     margin-bottom: 15px;
-
 }
 
 
@@ -634,7 +591,6 @@ header p {
     display: flex;
 
     gap: 10px;
-
 }
 
 
@@ -653,7 +609,6 @@ header p {
     color: white;
 
     font-weight: bold;
-
 }
 
 
@@ -662,7 +617,6 @@ header p {
     background: #e8eaf0;
 
     color: #333;
-
 }
 
 
@@ -683,14 +637,12 @@ header p {
     box-shadow:
         0 5px 20px
         rgba(0, 0, 0, 0.05);
-
 }
 
 
 .note h3 {
 
     margin-bottom: 10px;
-
 }
 
 
@@ -701,7 +653,6 @@ header p {
     white-space: pre-wrap;
 
     margin-bottom: 18px;
-
 }
 
 
@@ -712,7 +663,6 @@ header p {
     color: #888;
 
     margin-bottom: 15px;
-
 }
 
 
@@ -721,7 +671,6 @@ header p {
     display: flex;
 
     gap: 10px;
-
 }
 
 
@@ -731,7 +680,6 @@ header p {
         9px 14px;
 
     border-radius: 8px;
-
 }
 
 
@@ -740,7 +688,6 @@ header p {
     background: #e8efff;
 
     color: #315ed8;
-
 }
 
 
@@ -749,7 +696,6 @@ header p {
     background: #ffe8e8;
 
     color: #d63636;
-
 }
 
 
@@ -760,7 +706,6 @@ header p {
     color: #888;
 
     padding: 50px;
-
 }
 
 
@@ -773,14 +718,12 @@ header p {
     max-width: 600px;
 
     margin: 0 auto;
-
 }
 
 
 .calculator h2 {
 
     margin-bottom: 10px;
-
 }
 
 
@@ -789,7 +732,6 @@ header p {
     color: #777;
 
     margin-bottom: 20px;
-
 }
 
 
@@ -810,14 +752,12 @@ header p {
     font-size: 16px;
 
     font-weight: bold;
-
 }
 
 
 .calculator > button:hover {
 
     background: #365fdb;
-
 }
 
 
@@ -828,7 +768,6 @@ header p {
 .result {
 
     margin-top: 30px;
-
 }
 
 
@@ -845,14 +784,12 @@ header p {
     margin-bottom: 10px;
 
     border-radius: 10px;
-
 }
 
 
 .result-item strong {
 
     font-size: 20px;
-
 }
 
 
@@ -867,7 +804,6 @@ header p {
     margin-top: 15px;
 
     margin-bottom: 0 !important;
-
 }
 
 
@@ -878,12 +814,11 @@ header p {
 .hidden {
 
     display: none !important;
-
 }
 
 
 /* ==========================================
-   МОДАЛЬНЫЕ ОКНА
+   СОБСТВЕННЫЕ МОДАЛЬНЫЕ ОКНА
    ========================================== */
 
 .modal-overlay {
@@ -904,16 +839,18 @@ header p {
     padding: 20px;
 
     z-index: 1000;
-
 }
 
 
 .modal-overlay.hidden {
 
     display: none !important;
-
 }
 
+
+/* ==========================================
+   КАРТОЧКА МОДАЛЬНОГО ОКНА
+   ========================================== */
 
 .delete-modal {
 
@@ -933,7 +870,6 @@ header p {
 
     animation:
         modalAppear 0.15s ease-out;
-
 }
 
 
@@ -942,7 +878,6 @@ header p {
     font-size: 24px;
 
     margin-bottom: 12px;
-
 }
 
 
@@ -953,7 +888,6 @@ header p {
     margin-bottom: 25px;
 
     line-height: 1.5;
-
 }
 
 
@@ -966,7 +900,6 @@ header p {
     display: flex;
 
     gap: 12px;
-
 }
 
 
@@ -981,44 +914,43 @@ header p {
     font-size: 16px;
 
     font-weight: bold;
-
 }
 
+
+/* НЕТ — СЛЕВА */
 
 .modal-no {
 
     background: #eef0f4;
 
     color: #333;
-
 }
 
 
 .modal-no:hover {
 
     background: #dfe2e8;
-
 }
 
+
+/* ДА — СПРАВА */
 
 .modal-yes {
 
     background: #d63636;
 
     color: white;
-
 }
 
 
 .modal-yes:hover {
 
     background: #b92c2c;
-
 }
 
 
 /* ==========================================
-   АНИМАЦИЯ
+   АНИМАЦИЯ ОКНА
    ========================================== */
 
 @keyframes modalAppear {
@@ -1029,7 +961,6 @@ header p {
 
         transform:
             scale(0.95);
-
     }
 
     to {
@@ -1038,14 +969,12 @@ header p {
 
         transform:
             scale(1);
-
     }
-
 }
 
 
 /* ==========================================
-   ТЕЛЕФОН
+   АДАПТАЦИЯ ПОД ТЕЛЕФОН
    ========================================== */
 
 @media (max-width: 700px) {
@@ -1053,7 +982,6 @@ header p {
     .menu-grid {
 
         grid-template-columns: 1fr;
-
     }
 
 
@@ -1062,14 +990,12 @@ header p {
         align-items: flex-start;
 
         gap: 15px;
-
     }
 
 
     header {
 
         padding: 20px;
-
     }
 
 
@@ -1077,21 +1003,18 @@ header p {
 
         padding:
             25px 15px;
-
     }
 
 
     .card {
 
         padding: 20px;
-
     }
 
 
     .lesson {
 
         padding: 14px;
-
     }
 
 
@@ -1100,29 +1023,18 @@ header p {
         flex-direction: column;
 
         align-items: flex-start;
-
     }
 
 
     .logout-button {
 
         width: 100%;
-
     }
 
 
     .modal-buttons {
 
         gap: 10px;
-
     }
 
-
-    .bell-lesson {
-
-        width: 85px;
-
-    }
-
-}
 }
