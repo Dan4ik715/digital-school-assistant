@@ -1,1129 +1,1307 @@
-/* ==========================================
-   ОСНОВНЫЕ НАСТРОЙКИ
-   ========================================== */
-
-* {
-
-    box-sizing: border-box;
-
-    margin: 0;
-
-    padding: 0;
-
-}
-
-
-body {
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    background: #f3f5f9;
-
-    color: #20242c;
-
-}
-
-
-button,
-input,
-select,
-textarea {
-
-    font-family: inherit;
-
-}
-
-
-button {
-
-    cursor: pointer;
-
-    border: none;
-
-}
-
-
-.app {
-
-    min-height: 100vh;
-
-}
-
-
-/* ==========================================
-   СТРАНИЦЫ
-   ========================================== */
-
-.page {
-
-    display: none;
-
-    min-height: 100vh;
-
-}
-
-
-.page.active {
-
-    display: block;
-
-}
-
-
-/* ==========================================
-   РЕГИСТРАЦИЯ
-   ========================================== */
-
-#registrationPage {
-
-    display: none;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 20px;
-
-}
-
-
-#registrationPage.active {
-
-    display: flex;
-
-}
-
-
-.registration-card {
-
-    width: 100%;
-
-    max-width: 450px;
-
-    text-align: center;
-
-}
-
-
-.registration-card h1 {
-
-    margin-bottom: 10px;
-
-}
-
-
-.subtitle {
-
-    color: #777;
-
-    margin-bottom: 30px;
-
-}
-
-
-/* ==========================================
-   КАРТОЧКИ
-   ========================================== */
-
-.card {
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    box-shadow:
-        0 8px 30px
-        rgba(0, 0, 0, 0.07);
-
-}
-
-
-/* ==========================================
-   ФОРМЫ
-   ========================================== */
-
-label {
-
-    display: block;
-
-    text-align: left;
-
-    margin:
-        18px 0 7px;
-
-    font-weight: bold;
-
-}
-
-
-input,
-select,
-textarea {
-
-    width: 100%;
-
-    border:
-        1px solid #d8dce5;
-
-    border-radius: 10px;
-
-    padding: 13px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    background: white;
-
-}
-
-
-input:focus,
-select:focus,
-textarea:focus {
-
-    border-color: #4d7cff;
-
-}
-
-
-textarea {
-
-    min-height: 140px;
-
-    resize: vertical;
-
-}
-
-
-/* ==========================================
-   КНОПКА РЕГИСТРАЦИИ
-   ========================================== */
-
-.registration-card button {
-
-    width: 100%;
-
-    margin-top: 25px;
-
-    padding: 14px;
-
-    border-radius: 10px;
-
-    background: #4d7cff;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-}
-
-
-.registration-card button:hover {
-
-    background: #365fdb;
-
-}
-
-
-/* ==========================================
-   HEADER
-   ========================================== */
-
-header {
-
-    background: white;
-
-    padding:
-        25px 7%;
-
-    box-shadow:
-        0 2px 10px
-        rgba(0, 0, 0, 0.05);
-
-}
-
-
-header h1 {
-
-    font-size: 28px;
-
-}
-
-
-header p {
-
-    color: #777;
-
-    margin-top: 6px;
-
-}
-
-
-/* ==========================================
-   HEADER ГЛАВНОЙ
-   ========================================== */
-
-.home-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 20px;
-
-}
-
-
-/* ==========================================
-   КНОПКА ВЫХОДА
-   ========================================== */
-
-.logout-button {
-
-    background: #ffe8e8;
-
-    color: #d63636;
-
-    padding:
-        12px 18px;
-
-    border-radius: 10px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-
-}
-
-
-.logout-button:hover {
-
-    background: #ffd5d5;
-
-}
-
-
-/* ==========================================
-   HEADER ВНУТРИ РАЗДЕЛОВ
-   ========================================== */
-
-.section-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-}
-
-
-/* ==========================================
-   ГЛАВНАЯ
-   ========================================== */
-
-.home-content {
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-
-    padding:
-        60px 20px;
-
-}
-
-
-.menu-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-
-}
-
-
-.menu-card {
-
-    min-height: 220px;
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 12px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0, 0, 0, 0.06);
-
-    transition: 0.2s;
-
-}
-
-
-.menu-card:hover {
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 12px 30px
-        rgba(0, 0, 0, 0.12);
-
-}
-
-
-.menu-card .icon {
-
-    font-size: 55px;
-
-}
-
-
-.menu-card span:not(.icon) {
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-}
-
-
-.menu-card small {
-
-    color: #777;
-
-    text-align: center;
-
-}
-
-
-/* ==========================================
-   СТРАНИЦЫ РАЗДЕЛОВ
-   ========================================== */
-
-.content {
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-
-    padding:
-        40px 20px;
-
-}
-
-
-/* ==========================================
-   КНОПКА НАЗАД
-   ========================================== */
-
-.back-button {
-
-    background: #f0f2f6;
-
-    padding:
-        12px 18px;
-
-    border-radius: 10px;
-
-    font-weight: bold;
-
-    font-size: 15px;
-
-}
-
-
-.back-button:hover {
-
-    background: #e1e5ec;
-
-}
-
-
-/* ==========================================
-   РАСПИСАНИЕ
-   ========================================== */
-
-.day {
-
-    background: white;
-
-    border-radius: 15px;
-
-    margin-bottom: 20px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0, 0, 0, 0.05);
-
-}
-
-
-.day h2 {
-
-    padding: 18px 20px;
-
-    background: #4d7cff;
-
-    color: white;
-
-}
-
-
-.lesson {
-
-    display: flex;
-
-    padding:
-        15px 20px;
-
-    border-bottom:
-        1px solid #eee;
-
-}
-
-
-.lesson:last-child {
-
-    border-bottom: none;
-
-}
-
-
-.lesson-number {
-
-    width: 50px;
-
-    font-weight: bold;
-
-}
-
-
-.lesson-subject {
-
-    flex: 1;
-
-}
-
-
-/* ==========================================
-   РАСПИСАНИЕ ЗВОНКОВ
-   ========================================== */
-
-.bells-title {
-
-    background: #4d7cff;
-
-    color: white;
-
-    padding: 18px 20px;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-}
-
-
-.bell-lesson {
-
-    width: 100px;
-
-    font-weight: bold;
-
-}
-
-
-.bell-start {
-
-    color: #315ed8;
-
-    font-weight: bold;
-
-}
-
-
-.bell-end {
-
-    color: #555;
-
-    font-weight: bold;
-
-}
-
-
-.bell-separator {
-
-    color: #999;
-
-    margin: 0 8px;
-
-}
-
-
-/* ==========================================
-   ЗАМЕТКИ
-   ========================================== */
-
-.add-button {
-
-    background: #4d7cff;
-
-    color: white;
-
-    padding:
-        14px 20px;
-
-    border-radius: 10px;
-
-    font-weight: bold;
-
-    margin-bottom: 25px;
-
-}
-
-
-.note-form {
-
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 15px;
-
-    margin-bottom: 30px;
-
-}
-
-
-.note-form h2 {
-
-    margin-bottom: 15px;
-
-}
-
-
-.form-buttons {
-
-    display: flex;
-
-    gap: 10px;
-
-}
-
-
-.form-buttons button {
-
-    flex: 1;
-
-    margin-top: 25px;
-
-    padding: 14px;
-
-    border-radius: 10px;
-
-    background: #4d7cff;
-
-    color: white;
-
-    font-weight: bold;
-
-}
-
-
-.form-buttons .cancel-button {
-
-    background: #e8eaf0;
-
-    color: #333;
-
-}
-
-
-/* ==========================================
-   ОТДЕЛЬНАЯ ЗАМЕТКА
-   ========================================== */
-
-.note {
-
-    background: white;
-
-    border-radius: 15px;
-
-    padding: 22px;
-
-    margin-bottom: 15px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0, 0, 0, 0.05);
-
-}
-
-
-.note h3 {
-
-    margin-bottom: 10px;
-
-}
-
-
-.note p {
-
-    color: #555;
-
-    white-space: pre-wrap;
-
-    margin-bottom: 18px;
-
-}
-
-
-.note small {
-
-    display: block;
-
-    color: #888;
-
-    margin-bottom: 15px;
-
-}
-
-
-.note-actions {
-
-    display: flex;
-
-    gap: 10px;
-
-}
-
-
-.note-actions button {
-
-    padding:
-        9px 14px;
-
-    border-radius: 8px;
-
-}
-
-
-.edit-button {
-
-    background: #e8efff;
-
-    color: #315ed8;
-
-}
-
-
-.delete-button {
-
-    background: #ffe8e8;
-
-    color: #d63636;
-
-}
-
-
-.empty {
-
-    text-align: center;
-
-    color: #888;
-
-    padding: 50px;
-
-}
-
-
-/* ==========================================
-   КАЛЬКУЛЯТОР
-   ========================================== */
-
-.calculator {
-
-    max-width: 600px;
-
-    margin: 0 auto;
-
-}
-
-
-.calculator h2 {
-
-    margin-bottom: 10px;
-
-}
-
-
-.calculator > p {
-
-    color: #777;
-
-    margin-bottom: 20px;
-
-}
-
-
-.calculator > button {
-
-    width: 100%;
-
-    margin-top: 20px;
-
-    padding: 14px;
-
-    border-radius: 10px;
-
-    background: #4d7cff;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-}
-
-
-.calculator > button:hover {
-
-    background: #365fdb;
-
-}
-
-
-/* ==========================================
-   РЕЗУЛЬТАТ КАЛЬКУЛЯТОРА
-   ========================================== */
-
-.result {
-
-    margin-top: 30px;
-
-}
-
-
-.result-item {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    padding: 18px;
-
-    background: #f5f6fa;
-
-    margin-bottom: 10px;
-
-    border-radius: 10px;
-
-}
-
-
-.result-item strong {
-
-    font-size: 20px;
-
-}
-
-
-/* ==========================================
-   ОШИБКИ
-   ========================================== */
-
-.error {
-
-    color: #d63636 !important;
-
-    margin-top: 15px;
-
-    margin-bottom: 0 !important;
-
-}
-
-
-/* ==========================================
-   СКРЫТИЕ ЭЛЕМЕНТОВ
-   ========================================== */
-
-.hidden {
-
-    display: none !important;
-
-}
-
-
-/* ==========================================
-   МОДАЛЬНЫЕ ОКНА
-   ========================================== */
-
-.modal-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(0, 0, 0, 0.55);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 20px;
-
-    z-index: 1000;
-
-}
-
-
-.modal-overlay.hidden {
-
-    display: none !important;
-
-}
-
-
-.delete-modal {
-
-    width: 100%;
-
-    max-width: 420px;
-
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 28px;
-
-    box-shadow:
-        0 15px 50px
-        rgba(0, 0, 0, 0.25);
-
-    animation:
-        modalAppear 0.15s ease-out;
-
-}
-
-
-.delete-modal h2 {
-
-    font-size: 24px;
-
-    margin-bottom: 12px;
-
-}
-
-
-.delete-modal p {
-
-    color: #666;
-
-    margin-bottom: 25px;
-
-    line-height: 1.5;
-
-}
-
-
-/* ==========================================
-   КНОПКИ МОДАЛЬНОГО ОКНА
-   ========================================== */
-
-.modal-buttons {
-
-    display: flex;
-
-    gap: 12px;
-
-}
-
-
-.modal-buttons button {
-
-    flex: 1;
-
-    padding: 13px;
-
-    border-radius: 10px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-}
-
-
-.modal-no {
-
-    background: #eef0f4;
-
-    color: #333;
-
-}
-
-
-.modal-no:hover {
-
-    background: #dfe2e8;
-
-}
-
-
-.modal-yes {
-
-    background: #d63636;
-
-    color: white;
-
-}
-
-
-.modal-yes:hover {
-
-    background: #b92c2c;
-
-}
-
-
-/* ==========================================
-   АНИМАЦИЯ
-   ========================================== */
-
-@keyframes modalAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0.95);
+// ==========================================
+// РАСПИСАНИЕ
+// ==========================================
+
+const schedules = {
+
+    "10А": {
+
+        "Понедельник": [
+            "Математика",
+            "Русский язык",
+            "Информатика",
+            "Физика",
+            "История"
+        ],
+
+        "Вторник": [
+            "Английский язык",
+            "Физика",
+            "Информатика",
+            "Обществознание",
+            "Физическая культура"
+        ],
+
+        "Среда": [
+            "Математика",
+            "Литература",
+            "Химия",
+            "История",
+            "Английский язык"
+        ],
+
+        "Четверг": [
+            "Информатика",
+            "Математика",
+            "Физика",
+            "Русский язык",
+            "Биология"
+        ],
+
+        "Пятница": [
+            "История",
+            "Математика",
+            "Обществознание",
+            "Английский язык",
+            "Физическая культура"
+        ]
+
+    },
+
+
+    "10Б": {
+
+        "Понедельник": [
+            "Физика",
+            "Математика",
+            "Русский язык",
+            "История",
+            "Информатика"
+        ],
+
+        "Вторник": [
+            "Математика",
+            "Химия",
+            "Английский язык",
+            "Физика",
+            "Литература"
+        ],
+
+        "Среда": [
+            "Информатика",
+            "История",
+            "Математика",
+            "Биология",
+            "Физическая культура"
+        ],
+
+        "Четверг": [
+            "Русский язык",
+            "Физика",
+            "Математика",
+            "Обществознание",
+            "Информатика"
+        ],
+
+        "Пятница": [
+            "Английский язык",
+            "Математика",
+            "Химия",
+            "История",
+            "Физическая культура"
+        ]
+
+    },
+
+
+    "10В": {
+
+        "Понедельник": [
+            "Русский язык",
+            "Математика",
+            "Физика",
+            "Информатика",
+            "История"
+        ],
+
+        "Вторник": [
+            "Химия",
+            "Английский язык",
+            "Математика",
+            "Физическая культура",
+            "Литература"
+        ],
+
+        "Среда": [
+            "Математика",
+            "Информатика",
+            "Биология",
+            "История",
+            "Русский язык"
+        ],
+
+        "Четверг": [
+            "Физика",
+            "Математика",
+            "Английский язык",
+            "Обществознание",
+            "Информатика"
+        ],
+
+        "Пятница": [
+            "Литература",
+            "История",
+            "Математика",
+            "Физика",
+            "Физическая культура"
+        ]
+
+    },
+
+
+    "11А": {
+
+        "Понедельник": [
+            "Математика",
+            "Информатика",
+            "Физика",
+            "Русский язык",
+            "История"
+        ],
+
+        "Вторник": [
+            "Английский язык",
+            "Математика",
+            "Обществознание",
+            "Физика",
+            "Химия"
+        ],
+
+        "Среда": [
+            "Информатика",
+            "Математика",
+            "Русский язык",
+            "Литература",
+            "Физическая культура"
+        ],
+
+        "Четверг": [
+            "Физика",
+            "Математика",
+            "История",
+            "Информатика",
+            "Биология"
+        ],
+
+        "Пятница": [
+            "Русский язык",
+            "Математика",
+            "Английский язык",
+            "Обществознание",
+            "Физическая культура"
+        ]
+
+    },
+
+
+    "11Б": {
+
+        "Понедельник": [
+            "Информатика",
+            "Математика",
+            "Физика",
+            "История",
+            "Русский язык"
+        ],
+
+        "Вторник": [
+            "Математика",
+            "Английский язык",
+            "Химия",
+            "Информатика",
+            "Литература"
+        ],
+
+        "Среда": [
+            "Физика",
+            "Математика",
+            "Обществознание",
+            "Русский язык",
+            "Физическая культура"
+        ],
+
+        "Четверг": [
+            "Информатика",
+            "История",
+            "Математика",
+            "Биология",
+            "Английский язык"
+        ],
+
+        "Пятница": [
+            "Математика",
+            "Физика",
+            "Русский язык",
+            "Информатика",
+            "Физическая культура"
+        ]
 
     }
 
-    to {
+};
 
-        opacity: 1;
 
-        transform:
-            scale(1);
+
+// ==========================================
+// РАСПИСАНИЕ ЗВОНКОВ
+// ==========================================
+
+const bellSchedule = [
+
+    {
+        lesson: 1,
+        start: "08:30",
+        end: "09:15"
+    },
+
+    {
+        lesson: 2,
+        start: "09:25",
+        end: "10:10"
+    },
+
+    {
+        lesson: 3,
+        start: "10:20",
+        end: "11:05"
+    },
+
+    {
+        lesson: 4,
+        start: "11:15",
+        end: "12:00"
+    },
+
+    {
+        lesson: 5,
+        start: "12:20",
+        end: "13:05"
+    },
+
+    {
+        lesson: 6,
+        start: "13:15",
+        end: "14:00"
+    },
+
+    {
+        lesson: 7,
+        start: "14:10",
+        end: "14:55"
+    },
+
+    {
+        lesson: 8,
+        start: "15:05",
+        end: "15:50"
+    }
+
+];
+
+
+
+// ==========================================
+// ЗАПУСК
+// ==========================================
+
+window.onload = function () {
+
+    const savedUser =
+        localStorage.getItem("schoolUser");
+
+
+    if (savedUser) {
+
+        const user =
+            JSON.parse(savedUser);
+
+        showHome(user);
+
+    } else {
+
+        showPage("registrationPage");
+
+    }
+
+};
+
+
+
+// ==========================================
+// ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ
+// ==========================================
+
+function showPage(pageId) {
+
+    const pages =
+        document.querySelectorAll(".page");
+
+
+    pages.forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+
+    const page =
+        document.getElementById(pageId);
+
+
+    if (page) {
+
+        page.classList.add("active");
+
+    }
+
+
+    // Загружаем расписание
+
+    if (pageId === "schedulePage") {
+
+        loadSchedule();
+
+    }
+
+
+    // Загружаем расписание звонков
+
+    if (pageId === "bellsPage") {
+
+        loadBellSchedule();
+
+    }
+
+
+    // Загружаем заметки
+
+    if (pageId === "notesPage") {
+
+        renderNotes();
 
     }
 
 }
 
 
-/* ==========================================
-   ТЕЛЕФОН
-   ========================================== */
 
-@media (max-width: 700px) {
+// ==========================================
+// РЕГИСТРАЦИЯ
+// ==========================================
 
-    .menu-grid {
+function register() {
 
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .section-header {
-
-        align-items: flex-start;
-
-        gap: 15px;
-
-    }
+    const username =
+        document
+            .getElementById("usernameInput")
+            .value
+            .trim();
 
 
-    header {
-
-        padding: 20px;
-
-    }
-
-
-    .content {
-
-        padding:
-            25px 15px;
-
-    }
+    const selectedClass =
+        document
+            .getElementById("classInput")
+            .value;
 
 
-    .card {
+    const error =
+        document
+            .getElementById("registrationError");
 
-        padding: 20px;
+
+    error.textContent = "";
+
+
+    if (username === "") {
+
+        error.textContent =
+            "Введите имя пользователя.";
+
+        return;
 
     }
 
 
-    .lesson {
+    if (selectedClass === "") {
 
-        padding: 14px;
+        error.textContent =
+            "Выберите класс.";
 
-    }
-
-
-    .home-header {
-
-        flex-direction: column;
-
-        align-items: flex-start;
+        return;
 
     }
 
 
-    .logout-button {
+    const user = {
 
-        width: 100%;
+        username: username,
+
+        class: selectedClass
+
+    };
+
+
+    localStorage.setItem(
+        "schoolUser",
+        JSON.stringify(user)
+    );
+
+
+    showHome(user);
+
+}
+
+
+
+// ==========================================
+// ГЛАВНАЯ
+// ==========================================
+
+function showHome(user) {
+
+    document
+        .getElementById("welcomeText")
+        .textContent =
+        `Добро пожаловать, ${user.username}! Класс: ${user.class}`;
+
+
+    showPage("homePage");
+
+}
+
+
+
+// ==========================================
+// РАСПИСАНИЕ
+// ==========================================
+
+function loadSchedule() {
+
+    const savedUser =
+        localStorage.getItem("schoolUser");
+
+
+    if (!savedUser) {
+
+        return;
 
     }
 
 
-    .modal-buttons {
+    const user =
+        JSON.parse(savedUser);
 
-        gap: 10px;
+
+    const container =
+        document
+            .getElementById("scheduleContainer");
+
+
+    const className =
+        user.class;
+
+
+    document
+        .getElementById("scheduleClass")
+        .textContent =
+        `Расписание для класса ${className}`;
+
+
+    const schedule =
+        schedules[className];
+
+
+    container.innerHTML = "";
+
+
+    if (!schedule) {
+
+        container.innerHTML =
+            "<p>Расписание для этого класса пока не добавлено.</p>";
+
+        return;
 
     }
 
 
-    .bell-lesson {
+    for (const day in schedule) {
 
-        width: 85px;
+        const dayBlock =
+            document.createElement("div");
+
+
+        dayBlock.className =
+            "day";
+
+
+        const title =
+            document.createElement("h2");
+
+
+        title.textContent =
+            day;
+
+
+        dayBlock.appendChild(title);
+
+
+        schedule[day].forEach(
+            (subject, index) => {
+
+                const lesson =
+                    document.createElement("div");
+
+
+                lesson.className =
+                    "lesson";
+
+
+                lesson.innerHTML = `
+
+                    <div class="lesson-number">
+                        ${index + 1}.
+                    </div>
+
+                    <div class="lesson-subject">
+                        ${escapeHTML(subject)}
+                    </div>
+
+                `;
+
+
+                dayBlock.appendChild(lesson);
+
+            }
+        );
+
+
+        container.appendChild(dayBlock);
 
     }
 
 }
+
+
+
+// ==========================================
+// РАСПИСАНИЕ ЗВОНКОВ
+// ==========================================
+
+function loadBellSchedule() {
+
+    const container =
+        document.getElementById(
+            "bellsContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const dayBlock =
+        document.createElement("div");
+
+
+    dayBlock.className =
+        "day";
+
+
+    const title =
+        document.createElement("div");
+
+
+    title.className =
+        "bells-title";
+
+
+    title.textContent =
+        "Время уроков";
+
+
+    dayBlock.appendChild(title);
+
+
+    bellSchedule.forEach(bell => {
+
+        const lesson =
+            document.createElement("div");
+
+
+        lesson.className =
+            "lesson";
+
+
+        lesson.innerHTML = `
+
+            <div class="bell-lesson">
+                ${bell.lesson} урок
+            </div>
+
+            <div class="lesson-subject">
+
+                <span class="bell-start">
+                    ${bell.start}
+                </span>
+
+                <span class="bell-separator">
+                    —
+                </span>
+
+                <span class="bell-end">
+                    ${bell.end}
+                </span>
+
+            </div>
+
+        `;
+
+
+        dayBlock.appendChild(lesson);
+
+    });
+
+
+    container.appendChild(dayBlock);
+
 }
 
+
+
+// ==========================================
+// ПОЛУЧЕНИЕ ЗАМЕТОК
+// ==========================================
+
+function getNotes() {
+
+    const notes =
+        localStorage.getItem("schoolNotes");
+
+
+    return notes
+        ? JSON.parse(notes)
+        : [];
+
+}
+
+
+
+// ==========================================
+// СОХРАНЕНИЕ ЗАМЕТОК
+// ==========================================
+
+function saveNotes(notes) {
+
+    localStorage.setItem(
+        "schoolNotes",
+        JSON.stringify(notes)
+    );
+
+}
+
+
+
+// ==========================================
+// ОТКРЫТИЕ ФОРМЫ ЗАМЕТКИ
+// ==========================================
+
+function openNoteForm(note = null) {
+
+    const form =
+        document.getElementById("noteForm");
+
+
+    form.classList.remove("hidden");
+
+
+    if (note) {
+
+        document
+            .getElementById("noteFormTitle")
+            .textContent =
+            "Изменить заметку";
+
+
+        document
+            .getElementById("editNoteId")
+            .value =
+            note.id;
+
+
+        document
+            .getElementById("noteTitle")
+            .value =
+            note.title;
+
+
+        document
+            .getElementById("noteText")
+            .value =
+            note.text;
+
+    } else {
+
+        document
+            .getElementById("noteFormTitle")
+            .textContent =
+            "Новая заметка";
+
+
+        document
+            .getElementById("editNoteId")
+            .value =
+            "";
+
+
+        document
+            .getElementById("noteTitle")
+            .value =
+            "";
+
+
+        document
+            .getElementById("noteText")
+            .value =
+            "";
+
+    }
+
+}
+
+
+
+// ==========================================
+// ЗАКРЫТИЕ ФОРМЫ
+// ==========================================
+
+function closeNoteForm() {
+
+    document
+        .getElementById("noteForm")
+        .classList
+        .add("hidden");
+
+}
+
+
+
+// ==========================================
+// СОХРАНЕНИЕ ЗАМЕТКИ
+// ==========================================
+
+function saveNote() {
+
+    const title =
+        document
+            .getElementById("noteTitle")
+            .value
+            .trim();
+
+
+    const text =
+        document
+            .getElementById("noteText")
+            .value
+            .trim();
+
+
+    const editId =
+        document
+            .getElementById("editNoteId")
+            .value;
+
+
+    if (!title || !text) {
+
+        alert(
+            "Заполните заголовок и текст заметки."
+        );
+
+        return;
+
+    }
+
+
+    const notes =
+        getNotes();
+
+
+    if (editId) {
+
+        const note =
+            notes.find(
+                n => n.id == editId
+            );
+
+
+        if (note) {
+
+            note.title =
+                title;
+
+            note.text =
+                text;
+
+        }
+
+    } else {
+
+        const newNote = {
+
+            id: Date.now(),
+
+            title: title,
+
+            text: text,
+
+            date:
+                new Date()
+                    .toLocaleDateString("ru-RU")
+
+        };
+
+
+        notes.push(newNote);
+
+    }
+
+
+    saveNotes(notes);
+
+
+    closeNoteForm();
+
+
+    renderNotes();
+
+}
+
+
+
+// ==========================================
+// ОТОБРАЖЕНИЕ ЗАМЕТОК
+// ==========================================
+
+function renderNotes() {
+
+    const container =
+        document
+            .getElementById("notesContainer");
+
+
+    const notes =
+        getNotes();
+
+
+    container.innerHTML = "";
+
+
+    if (notes.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                У вас пока нет заметок.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    notes.forEach(note => {
+
+        const noteElement =
+            document.createElement("div");
+
+
+        noteElement.className =
+            "note";
+
+
+        noteElement.innerHTML = `
+
+            <h3>
+                ${escapeHTML(note.title)}
+            </h3>
+
+            <p>
+                ${escapeHTML(note.text)}
+            </p>
+
+            <small>
+                Создано: ${note.date}
+            </small>
+
+            <div class="note-actions">
+
+                <button
+                    class="edit-button"
+                    onclick="editNote(${note.id})">
+
+                    Изменить
+
+                </button>
+
+
+                <button
+                    class="delete-button"
+                    onclick="deleteNote(${note.id})">
+
+                    Удалить
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(noteElement);
+
+    });
+
+}
+
+
+
+// ==========================================
+// РЕДАКТИРОВАНИЕ ЗАМЕТКИ
+// ==========================================
+
+function editNote(id) {
+
+    const notes =
+        getNotes();
+
+
+    const note =
+        notes.find(
+            n => n.id === id
+        );
+
+
+    if (note) {
+
+        openNoteForm(note);
+
+    }
+
+}
+
+
+
+// ==========================================
+// УДАЛЕНИЕ ЗАМЕТКИ
+// ==========================================
+
+let noteToDelete = null;
+
+
+function deleteNote(id) {
+
+    noteToDelete = id;
+
+
+    document
+        .getElementById("deleteModal")
+        .classList
+        .remove("hidden");
+
+}
+
+
+
+// ==========================================
+// КНОПКА "НЕТ" ПРИ УДАЛЕНИИ
+// ==========================================
+
+function closeDeleteModal() {
+
+    noteToDelete = null;
+
+
+    document
+        .getElementById("deleteModal")
+        .classList
+        .add("hidden");
+
+}
+
+
+
+// ==========================================
+// КНОПКА "ДА" ПРИ УДАЛЕНИИ
+// ==========================================
+
+function confirmDelete() {
+
+    if (noteToDelete === null) {
+
+        return;
+
+    }
+
+
+    let notes =
+        getNotes();
+
+
+    notes =
+        notes.filter(
+            note =>
+                note.id !== noteToDelete
+        );
+
+
+    saveNotes(notes);
+
+
+    noteToDelete = null;
+
+
+    document
+        .getElementById("deleteModal")
+        .classList
+        .add("hidden");
+
+
+    renderNotes();
+
+}
+
+
+
+// ==========================================
+// ЗАЩИТА ТЕКСТА
+// ==========================================
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
+
+}
+
+
+
+// ==========================================
+// КАЛЬКУЛЯТОР ОЦЕНОК
+// ==========================================
+
+function calculateGrades() {
+
+    const input =
+        document
+            .getElementById("gradesInput")
+            .value
+            .trim();
+
+
+    const error =
+        document
+            .getElementById("calculatorError");
+
+
+    const result =
+        document
+            .getElementById("result");
+
+
+    error.textContent = "";
+
+
+    result.classList.add("hidden");
+
+
+    if (!input) {
+
+        error.textContent =
+            "Введите оценки.";
+
+        return;
+
+    }
+
+
+    const values =
+        input.split(/\s+/);
+
+
+    const grades = [];
+
+
+    for (const value of values) {
+
+        const grade =
+            Number(value);
+
+
+        if (
+            !Number.isInteger(grade) ||
+            grade < 1 ||
+            grade > 5
+        ) {
+
+            error.textContent =
+                "Можно вводить только целые оценки от 1 до 5.";
+
+            return;
+
+        }
+
+
+        grades.push(grade);
+
+    }
+
+
+    if (grades.length === 0) {
+
+        error.textContent =
+            "Не удалось найти оценки.";
+
+        return;
+
+    }
+
+
+    const sum =
+        grades.reduce(
+            (total, grade) =>
+                total + grade,
+            0
+        );
+
+
+    const average =
+        sum / grades.length;
+
+
+    let finalGrade;
+
+
+    if (average >= 4.5) {
+
+        finalGrade = 5;
+
+    } else if (average >= 3.5) {
+
+        finalGrade = 4;
+
+    } else if (average >= 2.5) {
+
+        finalGrade = 3;
+
+    } else {
+
+        finalGrade = 2;
+
+    }
+
+
+    document
+        .getElementById("gradesCount")
+        .textContent =
+        grades.length;
+
+
+    document
+        .getElementById("averageGrade")
+        .textContent =
+        average.toFixed(2);
+
+
+    document
+        .getElementById("finalGrade")
+        .textContent =
+        finalGrade;
+
+
+    result.classList.remove("hidden");
+
+}
+
+
+
+// ==========================================
+// ВЫХОД ИЗ КАЛЬКУЛЯТОРА
+// ==========================================
+
+function exitCalculator() {
+
+    document
+        .getElementById("gradesInput")
+        .value = "";
+
+
+    document
+        .getElementById("calculatorError")
+        .textContent = "";
+
+
+    document
+        .getElementById("result")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("gradesCount")
+        .textContent = "0";
+
+
+    document
+        .getElementById("averageGrade")
+        .textContent = "0";
+
+
+    document
+        .getElementById("finalGrade")
+        .textContent = "0";
+
+
+    showPage("homePage");
+
+}
+
+
+
+// ==========================================
+// ВЫХОД ИЗ АККАУНТА
+// ==========================================
+
+function logout() {
+
+    document
+        .getElementById("logoutModal")
+        .classList
+        .remove("hidden");
+
+}
+
+
+
+// ==========================================
+// КНОПКА "НЕТ" ПРИ ВЫХОДЕ
+// ==========================================
+
+function closeLogoutModal() {
+
+    document
+        .getElementById("logoutModal")
+        .classList
+        .add("hidden");
+
+}
+
+
+
+// ==========================================
+// КНОПКА "ДА" ПРИ ВЫХОДЕ
+// ==========================================
+
+function confirmLogout() {
+
+    localStorage.removeItem(
+   
