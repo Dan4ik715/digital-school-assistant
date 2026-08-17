@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>Цифровой помощник школьника</title>
 
-    <title>
-        Цифровой помощник школьника
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
 <div class="app">
 
-
     <!-- ======================================
          СТРАНИЦА РЕГИСТРАЦИИ
          ====================================== -->
 
-    <section
-        id="registrationPage"
-        class="page active">
+    <section id="registrationPage" class="page active">
 
         <div class="card registration-card">
 
-            <h1>
-                🎓 Цифровой помощник
-            </h1>
+            <h1>🎓 Цифровой помощник</h1>
 
             <p class="subtitle">
                 Введите свои данные для начала работы
@@ -51,7 +35,8 @@
             <input
                 type="text"
                 id="usernameInput"
-                placeholder="Например, Даниил">
+                placeholder="Например, Даниил"
+            >
 
 
             <label for="classInput">
@@ -64,25 +49,11 @@
                     Выберите класс
                 </option>
 
-                <option value="10А">
-                    10А
-                </option>
-
-                <option value="10Б">
-                    10Б
-                </option>
-
-                <option value="10В">
-                    10В
-                </option>
-
-                <option value="11А">
-                    11А
-                </option>
-
-                <option value="11Б">
-                    11Б
-                </option>
+                <option value="10А">10А</option>
+                <option value="10Б">10Б</option>
+                <option value="10В">10В</option>
+                <option value="10Г">10Г</option>
+                <option value="10Д">10Д</option>
 
             </select>
 
@@ -107,9 +78,7 @@
          ГЛАВНАЯ СТРАНИЦА
          ====================================== -->
 
-    <section
-        id="homePage"
-        class="page">
+    <section id="homePage" class="page">
 
         <header class="home-header">
 
@@ -162,28 +131,22 @@
 
                 </button>
 
-
-
                 <!-- РАСПИСАНИЕ ЗВОНКОВ -->
-
+                
                 <button
                     class="menu-card"
                     onclick="showPage('bellsPage')">
-
+                    
                     <span class="icon">
                         🔔
                     </span>
-
                     <span>
                         Расписание звонков
                     </span>
-
                     <small>
                         Время начала и окончания уроков
                     </small>
-
                 </button>
-
 
 
                 <!-- ЗАМЕТКИ -->
@@ -244,9 +207,7 @@
          СТРАНИЦА РАСПИСАНИЯ
          ====================================== -->
 
-    <section
-        id="schedulePage"
-        class="page">
+    <section id="schedulePage" class="page">
 
         <header class="section-header">
 
@@ -280,15 +241,11 @@
 
     </section>
 
-
-
     <!-- ======================================
-         СТРАНИЦА РАСПИСАНИЯ ЗВОНКОВ
-         ====================================== -->
+     СТРАНИЦА РАСПИСАНИЯ ЗВОНКОВ
+     ====================================== -->
 
-    <section
-        id="bellsPage"
-        class="page">
+    <section id="bellsPage" class="page">
 
         <header class="section-header">
 
@@ -324,15 +281,11 @@
 
     </section>
 
-
-
     <!-- ======================================
          СТРАНИЦА ЗАМЕТОК
          ====================================== -->
 
-    <section
-        id="notesPage"
-        class="page">
+    <section id="notesPage" class="page">
 
         <header class="section-header">
 
@@ -386,7 +339,8 @@
 
                 <input
                     type="hidden"
-                    id="editNoteId">
+                    id="editNoteId"
+                >
 
 
                 <label for="noteTitle">
@@ -396,7 +350,8 @@
                 <input
                     type="text"
                     id="noteTitle"
-                    placeholder="Например, Домашнее задание">
+                    placeholder="Например, Домашнее задание"
+                >
 
 
                 <label for="noteText">
@@ -415,7 +370,6 @@
                         Сохранить
                     </button>
 
-
                     <button
                         class="cancel-button"
                         onclick="closeNoteForm()">
@@ -427,7 +381,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- СПИСОК ЗАМЕТОК -->
@@ -444,9 +397,7 @@
          СТРАНИЦА КАЛЬКУЛЯТОРА
          ====================================== -->
 
-    <section
-        id="calculatorPage"
-        class="page">
+    <section id="calculatorPage" class="page">
 
         <header class="section-header">
 
@@ -462,6 +413,10 @@
 
             </div>
 
+
+            <!-- ВАЖНО:
+                 используется exitCalculator(),
+                 чтобы очистить калькулятор -->
 
             <button
                 class="back-button"
@@ -492,7 +447,8 @@
                 <input
                     type="text"
                     id="gradesInput"
-                    placeholder="5 4 5 4 5">
+                    placeholder="5 4 5 4 5"
+                >
 
 
                 <button onclick="calculateGrades()">
@@ -504,7 +460,6 @@
                     id="calculatorError"
                     class="error">
                 </p>
-
 
 
                 <!-- РЕЗУЛЬТАТ -->
@@ -566,7 +521,7 @@
 
 
 <!-- ==========================================
-     ОКНО УДАЛЕНИЯ ЗАМЕТКИ
+     СОБСТВЕННОЕ ОКНО УДАЛЕНИЯ ЗАМЕТКИ
      ========================================== -->
 
 <div
@@ -586,6 +541,8 @@
 
         <div class="modal-buttons">
 
+            <!-- СЛЕВА -->
+
             <button
                 class="modal-no"
                 onclick="closeDeleteModal()">
@@ -594,6 +551,8 @@
 
             </button>
 
+
+            <!-- СПРАВА -->
 
             <button
                 class="modal-yes"
@@ -612,7 +571,7 @@
 
 
 <!-- ==========================================
-     ОКНО ВЫХОДА ИЗ АККАУНТА
+     СОБСТВЕННОЕ ОКНО ВЫХОДА ИЗ АККАУНТА
      ========================================== -->
 
 <div
@@ -632,6 +591,8 @@
 
         <div class="modal-buttons">
 
+            <!-- СЛЕВА -->
+
             <button
                 class="modal-no"
                 onclick="closeLogoutModal()">
@@ -640,6 +601,8 @@
 
             </button>
 
+
+            <!-- СПРАВА -->
 
             <button
                 class="modal-yes"
@@ -660,5 +623,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>
