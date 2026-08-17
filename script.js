@@ -45,7 +45,6 @@ const schedules = {
             "Английский язык",
             "Физическая культура"
         ]
-
     },
 
 
@@ -90,7 +89,6 @@ const schedules = {
             "История",
             "Физическая культура"
         ]
-
     },
 
 
@@ -135,11 +133,10 @@ const schedules = {
             "Физика",
             "Физическая культура"
         ]
-
     },
 
 
-    "11А": {
+    "10Г": {
 
         "Понедельник": [
             "Математика",
@@ -180,11 +177,10 @@ const schedules = {
             "Обществознание",
             "Физическая культура"
         ]
-
     },
 
 
-    "11Б": {
+    "10Д": {
 
         "Понедельник": [
             "Информатика",
@@ -225,11 +221,9 @@ const schedules = {
             "Информатика",
             "Физическая культура"
         ]
-
     }
 
 };
-
 
 
 // ==========================================
@@ -289,7 +283,6 @@ const bellSchedule = [
 ];
 
 
-
 // ==========================================
 // ЗАПУСК
 // ==========================================
@@ -314,7 +307,6 @@ window.onload = function () {
     }
 
 };
-
 
 
 // ==========================================
@@ -346,7 +338,6 @@ function showPage(pageId) {
 
 
     // Загружаем расписание
-
     if (pageId === "schedulePage") {
 
         loadSchedule();
@@ -355,16 +346,14 @@ function showPage(pageId) {
 
 
     // Загружаем расписание звонков
-
     if (pageId === "bellsPage") {
-
+        
         loadBellSchedule();
-
+        
     }
 
 
     // Загружаем заметки
-
     if (pageId === "notesPage") {
 
         renderNotes();
@@ -372,7 +361,6 @@ function showPage(pageId) {
     }
 
 }
-
 
 
 // ==========================================
@@ -408,7 +396,6 @@ function register() {
             "Введите имя пользователя.";
 
         return;
-
     }
 
 
@@ -418,7 +405,6 @@ function register() {
             "Выберите класс.";
 
         return;
-
     }
 
 
@@ -442,7 +428,6 @@ function register() {
 }
 
 
-
 // ==========================================
 // ГЛАВНАЯ
 // ==========================================
@@ -458,7 +443,6 @@ function showHome(user) {
     showPage("homePage");
 
 }
-
 
 
 // ==========================================
@@ -538,6 +522,7 @@ function loadSchedule() {
         schedule[day].forEach(
             (subject, index) => {
 
+
                 const lesson =
                     document.createElement("div");
 
@@ -572,17 +557,14 @@ function loadSchedule() {
 }
 
 
-
 // ==========================================
-// РАСПИСАНИЕ ЗВОНКОВ
+// ОТОБРАЖЕНИЕ РАСПИСАНИЯ ЗВОНКОВ
 // ==========================================
 
 function loadBellSchedule() {
 
     const container =
-        document.getElementById(
-            "bellsContainer"
-        );
+        document.getElementById("bellsContainer");
 
 
     container.innerHTML = "";
@@ -592,16 +574,14 @@ function loadBellSchedule() {
         document.createElement("div");
 
 
-    dayBlock.className =
-        "day";
+    dayBlock.className = "day";
 
 
     const title =
         document.createElement("div");
 
 
-    title.className =
-        "bells-title";
+    title.className = "bells-title";
 
 
     title.textContent =
@@ -617,8 +597,7 @@ function loadBellSchedule() {
             document.createElement("div");
 
 
-        lesson.className =
-            "lesson";
+        lesson.className = "lesson";
 
 
         lesson.innerHTML = `
@@ -674,7 +653,6 @@ function getNotes() {
 }
 
 
-
 // ==========================================
 // СОХРАНЕНИЕ ЗАМЕТОК
 // ==========================================
@@ -687,7 +665,6 @@ function saveNotes(notes) {
     );
 
 }
-
 
 
 // ==========================================
@@ -728,6 +705,7 @@ function openNoteForm(note = null) {
             .value =
             note.text;
 
+
     } else {
 
         document
@@ -758,7 +736,6 @@ function openNoteForm(note = null) {
 }
 
 
-
 // ==========================================
 // ЗАКРЫТИЕ ФОРМЫ
 // ==========================================
@@ -771,7 +748,6 @@ function closeNoteForm() {
         .add("hidden");
 
 }
-
 
 
 // ==========================================
@@ -833,6 +809,7 @@ function saveNote() {
 
         }
 
+
     } else {
 
         const newNote = {
@@ -864,7 +841,6 @@ function saveNote() {
     renderNotes();
 
 }
-
 
 
 // ==========================================
@@ -957,7 +933,6 @@ function renderNotes() {
 }
 
 
-
 // ==========================================
 // РЕДАКТИРОВАНИЕ ЗАМЕТКИ
 // ==========================================
@@ -983,7 +958,6 @@ function editNote(id) {
 }
 
 
-
 // ==========================================
 // УДАЛЕНИЕ ЗАМЕТКИ
 // ==========================================
@@ -1004,7 +978,6 @@ function deleteNote(id) {
 }
 
 
-
 // ==========================================
 // КНОПКА "НЕТ" ПРИ УДАЛЕНИИ
 // ==========================================
@@ -1020,7 +993,6 @@ function closeDeleteModal() {
         .add("hidden");
 
 }
-
 
 
 // ==========================================
@@ -1064,7 +1036,6 @@ function confirmDelete() {
 }
 
 
-
 // ==========================================
 // ЗАЩИТА ТЕКСТА
 // ==========================================
@@ -1082,7 +1053,6 @@ function escapeHTML(text) {
     return div.innerHTML;
 
 }
-
 
 
 // ==========================================
@@ -1223,12 +1193,122 @@ function calculateGrades() {
 }
 
 
-
 // ==========================================
 // ВЫХОД ИЗ КАЛЬКУЛЯТОРА
 // ==========================================
 
 function exitCalculator() {
+
+    // Очищаем оценки
+
+    document
+        .getElementById("gradesInput")
+        .value = "";
+
+
+    // Очищаем сообщение об ошибке
+
+    document
+        .getElementById("calculatorError")
+        .textContent = "";
+
+
+    // Скрываем результат
+
+    document
+        .getElementById("result")
+        .classList
+        .add("hidden");
+
+
+    // Сбрасываем значения результата
+
+    document
+        .getElementById("gradesCount")
+        .textContent = "0";
+
+
+    document
+        .getElementById("averageGrade")
+        .textContent = "0";
+
+
+    document
+        .getElementById("finalGrade")
+        .textContent = "0";
+
+
+    // Возвращаемся на главную
+
+    showPage("homePage");
+
+}
+
+
+// ==========================================
+// ВЫХОД ИЗ АККАУНТА
+// ==========================================
+
+function logout() {
+
+    // Открываем собственное окно,
+    // а не стандартный confirm()
+
+    document
+        .getElementById("logoutModal")
+        .classList
+        .remove("hidden");
+
+}
+
+
+// ==========================================
+// КНОПКА "НЕТ" ПРИ ВЫХОДЕ
+// ==========================================
+
+function closeLogoutModal() {
+
+    document
+        .getElementById("logoutModal")
+        .classList
+        .add("hidden");
+
+}
+
+
+// ==========================================
+// КНОПКА "ДА" ПРИ ВЫХОДЕ
+// ==========================================
+
+function confirmLogout() {
+
+    // Удаляем аккаунт
+
+    localStorage.removeItem(
+        "schoolUser"
+    );
+
+
+    // Очищаем форму регистрации
+
+    document
+        .getElementById("usernameInput")
+        .value = "";
+
+
+    document
+        .getElementById("classInput")
+        .value = "";
+
+
+    // Убираем сообщение об ошибке
+
+    document
+        .getElementById("registrationError")
+        .textContent = "";
+
+
+    // Очищаем калькулятор
 
     document
         .getElementById("gradesInput")
@@ -1246,62 +1326,18 @@ function exitCalculator() {
         .add("hidden");
 
 
-    document
-        .getElementById("gradesCount")
-        .textContent = "0";
-
-
-    document
-        .getElementById("averageGrade")
-        .textContent = "0";
-
-
-    document
-        .getElementById("finalGrade")
-        .textContent = "0";
-
-
-    showPage("homePage");
-
-}
-
-
-
-// ==========================================
-// ВЫХОД ИЗ АККАУНТА
-// ==========================================
-
-function logout() {
-
-    document
-        .getElementById("logoutModal")
-        .classList
-        .remove("hidden");
-
-}
-
-
-
-// ==========================================
-// КНОПКА "НЕТ" ПРИ ВЫХОДЕ
-// ==========================================
-
-function closeLogoutModal() {
+    // Закрываем окно
 
     document
         .getElementById("logoutModal")
         .classList
         .add("hidden");
 
+
+    // Переходим на регистрацию
+
+    showPage(
+        "registrationPage"
+    );
+
 }
-
-
-
-// ==========================================
-// КНОПКА "ДА" ПРИ ВЫХОДЕ
-// ==========================================
-
-function confirmLogout() {
-
-    localStorage.removeItem(
-   
