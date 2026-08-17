@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Цифровой помощник школьника</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ======================================
+         СТРАНИЦА РЕГИСТРАЦИИ
+         ====================================== -->
+
+    <section id="registrationPage" class="page active">
+
+        <div class="card registration-card">
+
+            <h1>🎓 Цифровой помощник</h1>
+
+            <p class="subtitle">
+                Введите свои данные для начала работы
+            </p>
+
+
+            <label for="usernameInput">
+                Имя пользователя
+            </label>
+
+            <input
+                type="text"
+                id="usernameInput"
+                placeholder="Например, Даниил"
+            >
+
+
+            <label for="classInput">
+                Класс
+            </label>
+
+            <select id="classInput">
+
+                <option value="">
+                    Выберите класс
+                </option>
+
+                <option value="10А">10А</option>
+                <option value="10Б">10Б</option>
+                <option value="10В">10В</option>
+                <option value="10Г">10Г</option>
+                <option value="10Д">10Д</option>
+
+            </select>
+
+
+            <button onclick="register()">
+                Продолжить
+            </button>
+
+
+            <p
+                id="registrationError"
+                class="error">
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         ГЛАВНАЯ СТРАНИЦА
+         ====================================== -->
+
+    <section id="homePage" class="page">
+
+        <header class="home-header">
+
+            <div>
+
+                <h1>
+                    Цифровой помощник
+                </h1>
+
+                <p id="welcomeText"></p>
+
+            </div>
+
+
+            <!-- КНОПКА ВЫХОДА -->
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                Выйти из аккаунта
+
+            </button>
+
+        </header>
+
+
+        <main class="home-content">
+
+            <div class="menu-grid">
+
+
+                <!-- РАСПИСАНИЕ -->
+
+                <button
+                    class="menu-card"
+                    onclick="showPage('schedulePage')">
+
+                    <span class="icon">
+                        📅
+                    </span>
+
+                    <span>
+                        Расписание
+                    </span>
+
+                    <small>
+                        Расписание твоего класса
+                    </small>
+
+                </button>
+
+
+
+                <!-- ЗАМЕТКИ -->
+
+                <button
+                    class="menu-card"
+                    onclick="
+                        showPage('notesPage');
+                        renderNotes();
+                    ">
+
+                    <span class="icon">
+                        📝
+                    </span>
+
+                    <span>
+                        Заметки
+                    </span>
+
+                    <small>
+                        Создавай и редактируй заметки
+                    </small>
+
+                </button>
+
+
+
+                <!-- КАЛЬКУЛЯТОР -->
+
+                <button
+                    class="menu-card"
+                    onclick="showPage('calculatorPage')">
+
+                    <span class="icon">
+                        🧮
+                    </span>
+
+                    <span>
+                        Калькулятор
+                    </span>
+
+                    <small>
+                        Рассчитай средний балл
+                    </small>
+
+                </button>
+
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ======================================
+         СТРАНИЦА РАСПИСАНИЯ
+         ====================================== -->
+
+    <section id="schedulePage" class="page">
+
+        <header class="section-header">
+
+            <div>
+
+                <h1>
+                    📅 Расписание
+                </h1>
+
+                <p id="scheduleClass"></p>
+
+            </div>
+
+
+            <button
+                class="back-button"
+                onclick="showPage('homePage')">
+
+                ← Назад
+
+            </button>
+
+        </header>
+
+
+        <main class="content">
+
+            <div id="scheduleContainer"></div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ======================================
+         СТРАНИЦА ЗАМЕТОК
+         ====================================== -->
+
+    <section id="notesPage" class="page">
+
+        <header class="section-header">
+
+            <div>
+
+                <h1>
+                    📝 Заметки
+                </h1>
+
+                <p>
+                    Твои личные заметки
+                </p>
+
+            </div>
+
+
+            <button
+                class="back-button"
+                onclick="showPage('homePage')">
+
+                ← Назад
+
+            </button>
+
+        </header>
+
+
+        <main class="content">
+
+
+            <button
+                class="add-button"
+                onclick="openNoteForm()">
+
+                + Добавить заметку
+
+            </button>
+
+
+
+            <!-- ФОРМА ЗАМЕТКИ -->
+
+            <div
+                id="noteForm"
+                class="note-form hidden">
+
+                <h2 id="noteFormTitle">
+                    Новая заметка
+                </h2>
+
+
+                <input
+                    type="hidden"
+                    id="editNoteId"
+                >
+
+
+                <label for="noteTitle">
+                    Заголовок
+                </label>
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Например, Домашнее задание"
+                >
+
+
+                <label for="noteText">
+                    Текст заметки
+                </label>
+
+                <textarea
+                    id="noteText"
+                    placeholder="Напишите заметку..."
+                ></textarea>
+
+
+                <div class="form-buttons">
+
+                    <button onclick="saveNote()">
+                        Сохранить
+                    </button>
+
+                    <button
+                        class="cancel-button"
+                        onclick="closeNoteForm()">
+
+                        Отмена
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- СПИСОК ЗАМЕТОК -->
+
+            <div id="notesContainer"></div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ======================================
+         СТРАНИЦА КАЛЬКУЛЯТОРА
+         ====================================== -->
+
+    <section id="calculatorPage" class="page">
+
+        <header class="section-header">
+
+            <div>
+
+                <h1>
+                    🧮 Калькулятор оценок
+                </h1>
+
+                <p>
+                    Рассчитай свой средний балл
+                </p>
+
+            </div>
+
+
+            <!-- ВАЖНО:
+                 используется exitCalculator(),
+                 чтобы очистить калькулятор -->
+
+            <button
+                class="back-button"
+                onclick="exitCalculator()">
+
+                ← Назад
+
+            </button>
+
+        </header>
+
+
+        <main class="content">
+
+            <div class="card calculator">
+
+                <h2>
+                    Введите оценки
+                </h2>
+
+
+                <p>
+                    Введите оценки через пробел.
+                    Например: 5 4 5 3 5
+                </p>
+
+
+                <input
+                    type="text"
+                    id="gradesInput"
+                    placeholder="5 4 5 4 5"
+                >
+
+
+                <button onclick="calculateGrades()">
+                    Рассчитать
+                </button>
+
+
+                <p
+                    id="calculatorError"
+                    class="error">
+                </p>
+
+
+                <!-- РЕЗУЛЬТАТ -->
+
+                <div
+                    id="result"
+                    class="result hidden">
+
+
+                    <div class="result-item">
+
+                        <span>
+                            Количество оценок
+                        </span>
+
+                        <strong id="gradesCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-item">
+
+                        <span>
+                            Средний балл
+                        </span>
+
+                        <strong id="averageGrade">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-item">
+
+                        <span>
+                            Предполагаемая оценка
+                        </span>
+
+                        <strong id="finalGrade">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+</div>
+
+
+
+<!-- ==========================================
+     СОБСТВЕННОЕ ОКНО УДАЛЕНИЯ ЗАМЕТКИ
+     ========================================== -->
+
+<div
+    id="deleteModal"
+    class="modal-overlay hidden">
+
+    <div class="delete-modal">
+
+        <h2>
+            Удалить заметку?
+        </h2>
+
+        <p>
+            Вы действительно хотите удалить эту заметку?
+        </p>
+
+
+        <div class="modal-buttons">
+
+            <!-- СЛЕВА -->
+
+            <button
+                class="modal-no"
+                onclick="closeDeleteModal()">
+
+                Нет
+
+            </button>
+
+
+            <!-- СПРАВА -->
+
+            <button
+                class="modal-yes"
+                onclick="confirmDelete()">
+
+                Да
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     СОБСТВЕННОЕ ОКНО ВЫХОДА ИЗ АККАУНТА
+     ========================================== -->
+
+<div
+    id="logoutModal"
+    class="modal-overlay hidden">
+
+    <div class="delete-modal">
+
+        <h2>
+            Выйти из аккаунта?
+        </h2>
+
+        <p>
+            Вы действительно хотите выйти из аккаунта?
+        </p>
+
+
+        <div class="modal-buttons">
+
+            <!-- СЛЕВА -->
+
+            <button
+                class="modal-no"
+                onclick="closeLogoutModal()">
+
+                Нет
+
+            </button>
+
+
+            <!-- СПРАВА -->
+
+            <button
+                class="modal-yes"
+                onclick="confirmLogout()">
+
+                Да
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
