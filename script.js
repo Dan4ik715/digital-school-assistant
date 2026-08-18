@@ -235,49 +235,49 @@ const bellSchedule = [
     {
         lesson: 1,
         start: "08:30",
-        end: "09:15"
+        end: "09:10"
     },
 
     {
         lesson: 2,
         start: "09:25",
-        end: "10:10"
+        end: "10:05"
     },
 
     {
         lesson: 3,
-        start: "10:20",
+        start: "10:25",
         end: "11:05"
     },
 
     {
         lesson: 4,
-        start: "11:15",
-        end: "12:00"
+        start: "11:25",
+        end: "12:05"
     },
 
     {
         lesson: 5,
         start: "12:20",
-        end: "13:05"
+        end: "13:00"
     },
 
     {
         lesson: 6,
         start: "13:15",
-        end: "14:00"
+        end: "13:55"
     },
 
     {
         lesson: 7,
-        start: "14:10",
+        start: "14:15",
         end: "14:55"
     },
 
     {
         lesson: 8,
-        start: "15:05",
-        end: "15:50"
+        start: "15:15",
+        end: "15:55"
     }
 
 ];
